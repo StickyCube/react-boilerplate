@@ -1,0 +1,52 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["jest"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": false
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "prefer-const": "off",
+    "no-shadow": "off",
+    "no-multiple-empty-lines": ["error", {
+      "max": 1,
+      "maxBOF": 0,
+      "maxEOF": 0
+    }],
+    "prefer-destructuring": "off",
+    "no-use-before-define": ["error", {
+      "functions": false, 
+      "classes": true, 
+      "variables": true
+    }],
+    "react/jsx-one-expression-per-line": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**",
+        "**/__mocks__/**"
+      ],
+      "env": {
+        "jest/globals": true
+      }
+    }
+  ]
+}
